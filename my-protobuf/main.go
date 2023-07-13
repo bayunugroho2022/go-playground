@@ -5,6 +5,7 @@ import (
 	"log"
 	"time"
 	"my-protobuf/basic"
+	"my-protobuf/jobsearch"
 )
 
 type logWriter struct{}
@@ -17,8 +18,10 @@ func main() {
 	log.SetFlags(0)
 	log.SetOutput(new(logWriter))
 
-	basic.BasicUser()
+	// basic.BasicUser()
 	// basic.ProtoToJsonUser()
 	// basic.JsonToProtoUser()
 	// basic.BasicUserGroup()
+	jobsearch.JobSearchCandidate()
+	jobsearch.JobSearchSoftware()
 }
