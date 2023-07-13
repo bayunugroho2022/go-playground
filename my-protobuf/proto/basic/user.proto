@@ -24,4 +24,10 @@ message Address {
     string city = 2;
     string country = 3;
 
+    Cordinate cordinate = 16;
+
+    message Cordinate {
+        double latitude = 1;
+        double longitude = 2;
+    }
 }
