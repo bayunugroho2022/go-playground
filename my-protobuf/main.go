@@ -18,10 +18,11 @@ func main() {
 	log.SetFlags(0)
 	log.SetOutput(new(logWriter))
 
+	basic.BasicOneOf()
 	// basic.BasicUser()
 	// basic.BasicUnMarshalAnyKnow()
 	// basic.BasicUnMarshalAnyNotKnown()
-	basic.BasicUnMarshalAnyIs()
+	// basic.BasicUnMarshalAnyIs()
 	// basic.ProtoToJsonUser()
 	// basic.JsonToProtoUser() 
 	// basic.BasicUserGroup()
