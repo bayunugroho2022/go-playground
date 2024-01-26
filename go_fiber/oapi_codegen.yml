@@ -1,0 +1,92 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  x-go-package: "github.com/oapi-codegen/runtime"
+  title: Oapi Codegen Golang Fiber
+  license:
+    name: MIT
+  x-oapi-codegen-middlewares:
+    - Middleware
+
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/v1.0/check:
+    get:
+      summary: Check
+      operationId: check
+      responses:
+        '200':
+          description: Health check
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GlobalResponses'
+  /api/v1.0/book:
+      post:
+        summary: Check summary
+        operationId: checkOperationId
+        requestBody:
+          description: Store Book
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+          required: true
+        responses:
+          '200':
+            description: Store Book
+            content: 
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/BookResponse'
+components:
+  schemas:
+    GlobalResponses:
+      type: object
+      x-go-type-skip-optional-pointer: true
+      required: 
+        - responseCode
+        - responseMessage
+      properties:
+        responseCode:
+          type: string
+          x-go-type-skip-optional-pointer: true
+        responseMessage:
+          type: string
+          x-go-type-skip-optional-pointer: true
+    Book:
+      required:
+        - name
+      type: object
+      properties:
+        name:
+          type: string
+          example: 'Book Name Example'
+    BookResponse:
+      type: object
+      required: 
+        - code
+        - data
+        - message
+      properties:
+        code: 
+          type: number
+          x-go-type-skip-optional-pointer: true
+        message:
+          type: string
+          x-go-type-skip-optional-pointer: true
+        data:
+          type: object
+          x-go-type-skip-optional-pointer: true
+          required: 
+            - id
+            - name
+          properties:
+            id:
+              type: string
+              x-go-type-skip-optional-pointer: true
+            name:
+              type: string
+              x-go-type-skip-optional-pointer: true
+        

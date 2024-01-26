@@ -21,7 +21,7 @@ func main() {
 	// basic.BasicOneOf()
 	// basic.BasicUser()
 	// basic.WriteToJSONSample()
-	basic.ReadFromJSONSample()
+	// basic.ReadFromJSONSample()
 	// basic.WriteToFileSample()
 	// basic.ReadFromFileSample()
 	// basic.BasicUnMarshalAnyKnow()
@@ -32,5 +32,10 @@ func main() {
 	// basic.BasicUserGroup()
 	// jobsearch.JobSearchCandidate()
 	// jobsearch.JobSearchSoftware()
-
+	// basic.BasicWriteUserContentV1()
+	// basic.BasicReadUserContentV1()
+	// basic.BasicWriteUserContentV2()
+	basic.BasicReadUserContentV2()
+	// basic.BasicWriteUserContentV3()
+	basic.BasicReadUserContentV3()
 }
